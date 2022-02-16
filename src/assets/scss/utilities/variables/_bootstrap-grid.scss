@@ -1,0 +1,29 @@
+// breakpoints
+$mobile: 576px;
+$pad: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+$desktop-big: 1440px;
+
+// Grid columns
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: $mobile,
+  md: $pad,
+  lg: $laptop,
+  xl: $desktop,
+) !default;
+
+// Grid containers
+// + 20px 是為了補正 col 的 padding，不然會少 20px
+$container-max-widths: (
+  sm: 540px + 20px,
+  md: 728px + 20px,
+  lg: 960px + 20px,
+  xl: 1140px + 20px
+) !default;

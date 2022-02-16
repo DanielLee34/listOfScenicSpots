@@ -1,0 +1,14 @@
+.e-swiper{
+    &__img{
+        width: 100%;
+    }
+    &__title{
+        @include font($font-l, $third, 0.8px, 1.85);
+        @include ellipsis;
+        font-weight: bold;
+        text-align: left;
+        @include pad{
+            font-size: $font-m;
+        }
+    }
+}

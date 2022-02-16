@@ -1,0 +1,38 @@
+// Color
+
+$primary: #3f496b;
+$secondary: #1a2d6d;
+$third: #373957;
+
+$yellow: #ffd200;
+
+$success: blue;
+$danger: #be0027;
+$info: #00cc99;
+$muted: #a09e9e;
+$dark: rgba(black, 0.75);
+$light: rgba(white, 0.7);
+$font-primary: #272727;
+$font-secondary: #4d4d4d;
+$font-third: #534e4c;
+$font-article: #919191;
+// $font-third: #2d2d2d;
+// $font-primary: #534e4c;
+// $font-hover: #919191;
+
+$white: white;
+$black: black;
+$gray: gray;
+
+$theme-color: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'danger': $danger,
+  'info': $info,
+  'muted': $muted,
+  'light': $light,
+  'dark': $dark,
+  'white': $white,
+  'black': $black,
+);

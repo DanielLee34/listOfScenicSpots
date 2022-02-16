@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+html ,body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: $browser-default-font-size;
+  font-family: "Microsoft JhengHei", PingFang;
+  background-color: #ffffff;
+  // overflow-x: hidden;
+}
+
+h1, h2, h3, h4, b, h6{
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, b, h6, p, span, a{
+  margin: 0px;
+}
+
+h1, h2, h3, h4, b, h6, p, span, a{
+  color: $font-primary;
+}
+
+h1{
+  font-size: $font-h1;
+}
+h2{
+  font-size: $font-l;
+}
+h3{
+  font-size: $font-m;
+}
+h4{
+  font-size: $font-b;
+}
+
+hr{
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $black;
+  margin: 10px 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+img[lazy=loaded]{
+  animation:fade 0.5s;
+}
+
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+.custom-select {
+  display: inline-block;
+  width: 15.7143%;
+  // height: calc(1.5em + .75rem + 2px);
+  // padding: .375rem 1.75rem .375rem .75rem;
+  padding-right: 1.75rem;
+  padding-left: .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  vertical-align: middle;
+  background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 18px center/8px 10px;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.custom-control-label::before, .custom-file-label, .custom-select{
+  transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+// .input-group>.custom-file, .input-group>.custom-select, .input-group>.form-control, .input-group>.form-control-plaintext{
+//     position: relative;
+//     -ms-flex: 1 1 auto;
+//     flex: 1 1 auto;
+//     width: 1%;
+//     min-width: 0;
+//     margin-bottom: 0;
+// }

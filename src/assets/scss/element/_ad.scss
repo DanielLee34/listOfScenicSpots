@@ -1,0 +1,12 @@
+.e-ad{
+    width: 24%;
+    position: sticky;
+    top: 0;
+    @include mobile{
+        display: none;
+    }
+    img{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

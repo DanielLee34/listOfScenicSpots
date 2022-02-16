@@ -1,0 +1,155 @@
+.e-search{
+    width: 100%;
+    height: 400px;
+    // @include bg-img($primary, '');
+    background-color: #ffe8f2;
+    background-image: url(../img/bg/banner.jpg);
+    // @include  bg-contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include pad{
+        height: auto;
+        background-color: #ffe8f2;
+        display: block;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    &__title{
+        font-size: $font-xxxl;
+        font-weight: 400;
+        color: $primary;
+        text-align: center;
+        margin-bottom: 30px;
+        @include pad{
+            font-size: $font-xl;
+            margin-bottom: 10px;
+        }
+    }
+    &-bar {
+        @include content-center;
+        justify-content: space-between;
+        margin: auto;
+        margin-bottom: 18px;
+        max-width: 980px;
+        background-color: white;
+        border-radius: 12px;
+        // padding-right: 15px;
+        // padding: 10px 15px;
+
+        @include pad{
+            flex-direction: column;
+            margin: 0;
+            background: none;
+            border-radius: 0;
+            padding-right: 0px;
+        }
+
+        &__title{
+            flex-shrink:0;
+            width: 16.6327%;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            text-align: center;
+            border-radius: 12px 0 0 12px;
+            background-color: $primary;
+            color: $white;
+            @include pad{
+                border-radius: 0;
+                background: none;
+                color: #EA1070;
+                font-size: 16px;
+                width: 100%;
+                padding-bottom: 10px;
+                padding-top: 0;
+            }
+        }
+        &__select {
+            // width: 154px;
+            width: 50%;
+            flex-shrink: 0;
+            border: none;
+            border-right: 1px solid #d9d9d9;
+            border-radius: 0px;
+            @include pad {
+                &:last-of-type{
+                    border-right: 0px;
+                }
+            }
+        }
+        &__input-icon{
+            width: 20px;
+            margin-left: 18px;
+            margin-right: 15px;
+            @include pad {
+                margin-left: 0;
+            }
+        }
+        &__input {
+            // width: 62.9191%;
+            width: 100%;
+            border: none;
+            font-size: $font-m;
+            color: $gray;
+            @include laptop{
+                width: 57%;
+            }
+            @include pad {
+                // width: 60.6897%;
+                width: 100%;
+                font-size: 16px;
+                height: 30px;
+            }
+        }
+        &__keyWord{
+            max-width: 980px;
+            margin: auto;
+            color: $primary;
+            font-size: $font-b;
+            span {
+                color: $primary;
+                font-size: $font-b;
+                margin-left: 15px;
+                cursor: pointer;
+            }
+            @include pad {
+                display: none;
+            }
+        }
+    }
+    &-section{
+        &-top{
+            width: 31.5306%;
+            @include content-center;
+            @include pad {
+                padding: 11px 15px;
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: -0.3px 3px 6px 0 rgba(0, 0, 0, 0.09);
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        &-bottom{
+            width: 51.7347%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 13px;
+            .e-btn__search{
+                flex-shrink: 0;
+            }
+            @include pad{
+                @include content-center;
+                padding: 5px 15px;
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: -0.3px 3px 6px 0 rgba(0, 0, 0, 0.09);
+                width: 100%;
+            }
+        }
+    }
+}

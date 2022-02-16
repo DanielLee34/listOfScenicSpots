@@ -1,0 +1,51 @@
+.e-btn{
+    &__defualt{
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        text-align: center;
+        // width: 187px;
+        padding: 14px 54px;
+        @include font($font-l,white,1,1);
+        border-radius: 24px;
+        background-blend-mode: multiply;
+        background-image: linear-gradient(to right, #0078e1, #00c8f0);
+        cursor: pointer;
+    }
+    &__img{
+        border: none;
+        outline: none;
+        text-align: center;
+        cursor: pointer;
+        width: 20px;
+        padding: 0;
+        background-color: transparent;
+        img{
+            width: 100%;
+        }
+    }
+    &__nav{
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        text-align: center;
+        cursor: pointer;
+        background-color: #ddd;
+        color: #b0aba7;
+        font-size: 16px;
+        font-weight: 400;
+        width: 33px;
+        padding: 10px 0;
+        margin-right: 5px;
+        @include mobile{
+            margin-bottom: 5px;
+        }
+        &:last-of-type{
+            margin-right: 0;
+        }
+        &--active{
+            color: white;
+            background-color: #2eabd5;
+        }
+    }
+}

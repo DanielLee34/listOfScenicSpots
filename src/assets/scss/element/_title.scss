@@ -1,0 +1,9 @@
+.e-title{
+    @include font($font-h2, #2f3857, 1px, 1);
+    text-align: center;
+    margin-bottom: 30px;
+    @include pad{
+        font-size: $font-xl;
+        margin-bottom: 16px;
+    }
+}

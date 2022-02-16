@@ -1,0 +1,12 @@
+.e-navigation{
+    &__wrapper{
+        @include content-between;
+        padding-bottom: 15px;
+    }
+    &__page{
+        font-size: 16px;
+        @include mobile{
+            display: none;
+        }
+    }
+}

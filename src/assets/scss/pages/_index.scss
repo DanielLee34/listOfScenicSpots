@@ -1,0 +1,29 @@
+.p-index{
+    &__wrapper{
+        background-color: #eeeeee;
+    }
+    &__control-group{
+        @include content-between;
+        @include mobile {
+            @include content-column-center;
+        }
+    }
+    &__type-group{
+        @include content-between;
+    }
+    &__container{
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
+    &__main{
+        width: 74%;
+        margin-right: 2%;
+        @include mobile{
+            width: 100%;
+        }
+    }
+    &__title{
+        text-align: center;
+    }
+}
