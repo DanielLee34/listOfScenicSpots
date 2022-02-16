@@ -37,6 +37,7 @@
                 <img src="@/assets/img/adv3.png" alt="廣告">
             </div>
         </div>
+        <LoadMask v-if="isLoading" />
     </div>
 </template>
 
@@ -48,6 +49,7 @@ import ListPicture from '@/components/ListPicture.vue';
 import FormSelect from '@/components/FormSelect.vue';
 import Navigation from '@/components/Navigation.vue';
 import Error from '@/components/Error.vue';
+import LoadMask from '@/components/LoadMask.vue';
 
 export default {
     name: 'Home',
@@ -58,9 +60,11 @@ export default {
         FormSelect,
         Navigation,
         Error,
+        LoadMask,
     },
     data() {
         return {
+            isLoading: true,
             nowCityNo: -1,
             nowTownName: '0',
             totalPage: 1,
@@ -5216,6 +5220,10 @@ export default {
             //     });
             }
         });
+
+        setTimeout(() => {
+            this.isLoading = false;
+        }, 2000);
     },
 };
 
