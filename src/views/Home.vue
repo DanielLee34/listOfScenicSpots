@@ -28,6 +28,7 @@
                     :now-page="nowPage"
                     class="mb-1"
                 ></component>
+                <Error :scenic-list="scenicList" />
                 <Navigation :total-page="totalPage" :now-page.sync="nowPage" />
             </div>
             <div class="e-ad">
@@ -46,6 +47,7 @@ import ListTable from '@/components/ListTable.vue';
 import ListPicture from '@/components/ListPicture.vue';
 import FormSelect from '@/components/FormSelect.vue';
 import Navigation from '@/components/Navigation.vue';
+import Error from '@/components/Error.vue';
 
 export default {
     name: 'Home',
@@ -55,6 +57,7 @@ export default {
         ListPicture,
         FormSelect,
         Navigation,
+        Error,
     },
     data() {
         return {
@@ -5171,6 +5174,9 @@ export default {
                 if (this.scenicList?.length !== 0) {
                     this.totalPage = Math.ceil(this.scenicList?.length / 10);
                     this.nowPage = 0;
+                } else {
+                    this.totalPage = 0;
+                    this.nowPage = 0;
                 }
             }
         },
@@ -5181,6 +5187,9 @@ export default {
                 );
                 if (this.scenicList?.length !== 0) {
                     this.totalPage = Math.ceil(this.scenicList?.length / 10);
+                    this.nowPage = 0;
+                } else {
+                    this.totalPage = 0;
                     this.nowPage = 0;
                 }
             }
@@ -5200,10 +5209,6 @@ export default {
             //             (e) => e.Town === townElement.name,
             //         );
             //         if (isOwnTown === -1) {
-            //             console.log('townElement = ', townElement);
-            //             console.log('isOwnTown = ', isOwnTown);
-            //             console.log('townIndex = ', townIndex);
-            //             console.log('townObject = ', townObject);
             //             townObject.splice(townIndex, 1);
             //         }
             //     });

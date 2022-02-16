@@ -26,9 +26,6 @@
                 </tr>
             </tbody>
         </table>
-        <div v-if="scenicListMax10.length === 0" class="e-error">
-            目前此分類無資料
-        </div>
     </div>
 </template>
 

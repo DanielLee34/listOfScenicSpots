@@ -1,6 +1,6 @@
 <template>
     <div class="e-navigation__wrapper">
-        <p class="e-navigation__page">美食頁次{{(nowPage+1)}}/{{totalPage}}</p>
+        <p v-if="totalPage" class="e-navigation__page">美食頁次{{(nowPage+1)}}/{{totalPage}}</p>
         <div class="e-navigation__btn-group">
             <button
                 v-for="(item, index) in totalPage"
