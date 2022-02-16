@@ -61,7 +61,7 @@ export default {
     },
     data() {
         return {
-            nowCityNo: 0,
+            nowCityNo: -1,
             nowTownName: '0',
             totalPage: 1,
             nowPage: 0,
@@ -5167,10 +5167,12 @@ export default {
     watch: {
         nowCityNo(newValue, oldValue) {
             if (newValue !== oldValue) {
-                this.nowTownName = 0;
-                this.scenicList = this.listOfScenicSpots.filter(
-                    (value) => value.City === this.districtsData[this.nowCityNo].cityName,
-                );
+                if (this.nowCityNo !== -1) {
+                    this.nowTownName = 0;
+                    this.scenicList = this.listOfScenicSpots.filter(
+                        (value) => value.City === this.districtsData[this.nowCityNo].cityName,
+                    );
+                }
                 if (this.scenicList?.length !== 0) {
                     this.totalPage = Math.ceil(this.scenicList?.length / 10);
                     this.nowPage = 0;

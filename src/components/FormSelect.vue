@@ -2,7 +2,7 @@
     <div>
         <section class="e-form__group">
             <select name="city" id="" v-model="cityNo" class="e-form__select">
-                <option disabled value="0">請選擇行政區</option>
+                <option disabled value="-1">請選擇行政區</option>
                 <option
                     v-for="(item, index) in districtsData"
                     :key="index"
@@ -35,7 +35,7 @@ export default {
     // },
     computed: {
         districts() {
-            return this.districtsData[this.cityNo].districts;
+            return this.cityNo !== -1 ? this.districtsData[this.cityNo].districts : null;
         },
         cityNo: {
             get() {
