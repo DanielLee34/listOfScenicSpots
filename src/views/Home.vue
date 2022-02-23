@@ -7,7 +7,7 @@
                     <FormSelect
                         :parent-city-no.sync="nowCityNo"
                         :parent-town-name.sync="nowTownName"
-                        :districts-data="districtsData"
+                        :districts-data="districtsInfo"
                     />
                     <div class="p-index__type-group">
                         <p>檢視模式：</p>
@@ -70,6 +70,7 @@ export default {
             totalPage: 1,
             nowPage: 0,
             listStyleType: 'ListGraphic',
+            districtsInfo: [],
             districtsData: [
                 {
                     districts: [
@@ -5174,7 +5175,7 @@ export default {
                 if (this.nowCityNo !== -1) {
                     this.nowTownName = 0;
                     this.scenicList = this.listOfScenicSpots.filter(
-                        (value) => value.City === this.districtsData[this.nowCityNo].cityName,
+                        (value) => value.City === this.districtsInfo[this.nowCityNo].cityName,
                     );
                 }
                 if (this.scenicList?.length !== 0) {
@@ -5205,19 +5206,24 @@ export default {
         this.scenicList = this.listOfScenicSpots;
         this.totalPage = Math.ceil(this.scenicList?.length / 10);
 
-        this.districtsData.forEach((element, index, object) => {
+        this.districtsData.forEach((element) => {
             const isOwnCity = this.listOfScenicSpots.findIndex((e) => e.City === element.cityName);
-            if (isOwnCity === -1) {
-                object.splice(index, 1);
-            // } else {
-            //     element.districts.forEach((townElement, townIndex, townObject) => {
-            //         const isOwnTown = this.listOfScenicSpots.findIndex(
-            //             (e) => e.Town === townElement.name,
-            //         );
-            //         if (isOwnTown === -1) {
-            //             townObject.splice(townIndex, 1);
-            //         }
-            //     });
+            if (isOwnCity !== -1) {
+                const children = [];
+                element.districts.forEach((townElement) => {
+                    const isOwnTown = this.listOfScenicSpots.findIndex(
+                        (e) => e.Town === townElement.name,
+                    );
+                    if (isOwnTown !== -1) {
+                        children.push(townElement);
+                    }
+                });
+                this.districtsInfo.push(
+                    {
+                        cityName: element.cityName,
+                        districts: children,
+                    },
+                );
             }
         });
 
